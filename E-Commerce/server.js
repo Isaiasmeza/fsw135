@@ -13,8 +13,14 @@ mongoose.connect("mongodb://localhost:27017/inventorydb",
     useCreateIndex: true,
     useFindAndModify: true,
 },
-() => console.log("connect DB"))
+() => console.log("connect to DB"))
+app.use("/inventory", require("./inventoryRouter"))
+
+app.use(( err,req,res,next) => {
+    console.log(err)
+    return res.send({errMsg: err.message})
+})
 
 app.listen(9000, () => {
-    console.log("server is running on Port; 9000")
+    console.log("server is running on Port: 9000")
 })
