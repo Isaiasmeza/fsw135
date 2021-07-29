@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema
-const issueSchema = new Schema({
+const TodoSchema = new Schema({
     comment:{
         type:String,
         required:true
@@ -27,6 +27,7 @@ const issueSchema = new Schema({
         default:0
     },
     
+    
 
 })
-module.exports = mongoose.model("Comment", issueSchema)
+module.exports = mongoose.model("Comment", TodoSchema)

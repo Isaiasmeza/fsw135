@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema
-const issueSchema = new Schema({
+const todoSchema = new Schema({
     topic: {
         type: String,
         required: true,
@@ -21,4 +21,4 @@ const issueSchema = new Schema({
         type: String
     }
 })
-module.exports = mongoose.model("issue", issueSchema)
+module.exports = mongoose.model("Todo", todoSchema)

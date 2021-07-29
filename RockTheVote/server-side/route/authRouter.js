@@ -1,7 +1,7 @@
-const express = require("expres")
+const express = require("express")
 const authRouter = express.Router()
 const jwt = require("jsonwebtoken")
-const user = require("..models/user.js")
+const user = require(".models/user.js")
 
 authRouter.post("signup", (req, res, next) => {
     usefindOne({ username: req.body.username.lowerCase() }, (err, user) => {
